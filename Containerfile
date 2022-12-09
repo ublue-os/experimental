@@ -2,6 +2,7 @@ FROM ghcr.io/cgwalters/fedora-silverblue:37
 # See https://pagure.io/releng/issue/11047 for final location
 
 COPY etc /etc
+RM /usr/share/flatpak/fedora-flathub.filter
 
 COPY ublue-firstboot /usr/bin
 
