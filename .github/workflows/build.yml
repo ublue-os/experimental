@@ -21,8 +21,8 @@ jobs:
         id: check
         uses: twiddler/is-my-docker-parent-image-out-of-date@v1
         with:
-          base-image: cgwalters/fedora-silverblue:37
-          image: ublue-os/experimental:latest    
+          base-image: ghcr.io/cgwalters/fedora-silverblue:37
+          image: ghcr.io/ublue-os/experimental:latest    
       # Checkout push-to-registry action github repository
       - name: Checkout Push to Registry action
         uses: actions/checkout@v2
