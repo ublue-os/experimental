@@ -38,9 +38,7 @@ jobs:
           tags: ${{ env.IMAGE_TAGS }}
           oci: true
           
-      - name: Install cosign
       - uses: sigstore/cosign-installer@main
-
       - name: Write signing key to disk (only needed for `cosign sign --key`)
         run: echo "${{ secrets.SIGNING_SECRET }}" > cosign.key
 
