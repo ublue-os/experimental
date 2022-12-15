@@ -37,6 +37,19 @@ jobs:
           image: ${{ env.IMAGE_NAME }}
           tags: ${{ env.IMAGE_TAGS }}
           oci: true
+          
+      - name: Install cosign
+      - uses: sigstore/cosign-installer@main
+
+      - name: Write signing key to disk (only needed for `cosign sign --key`)
+        run: echo "${{ secrets.SIGNING_SECRET }}" > cosign.key
+
+      - name: Sign container image
+        run: |
+          cosign sign --key cosign.key \
+            ghcr.io/ublue-os/experimental:latest
+        env:
+          COSIGN_PASSWORD: ""
 
       # Push the image to GHCR (Image Registry)
       - name: Push To GHCR
@@ -50,6 +63,7 @@ jobs:
           password: ${{ env.REGISTRY_PASSWORD }}
           extra-args: |
             --disable-content-trust
+          
 
       - name: Echo outputs
         run: |
