@@ -40,7 +40,7 @@ jobs:
       - name: Sign container image
         run: |
           cosign sign --key cosign.key \
-            ghcr.io/ublue-os/experimental:latest
+            ghcr.io/ublue-os/experimental:${{ github.sha }}
         env:
           COSIGN_PASSWORD: ""
 
