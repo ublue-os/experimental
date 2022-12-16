@@ -32,10 +32,8 @@ jobs:
           image: ${{ env.IMAGE_NAME }}
           tags: ${{ env.IMAGE_TAGS }}
           oci: true
-          
-      - uses: sigstore/cosign-installer@main
-      - name: Write signing key to disk (only needed for `cosign sign --key`)
-        run: echo "${{ secrets.SIGNING_SECRET }}" > cosign.key
+       
+
 
       # Push the image to GHCR (Image Registry)
       - name: Push To GHCR
@@ -49,7 +47,10 @@ jobs:
           password: ${{ env.REGISTRY_PASSWORD }}
           extra-args: |
             --disable-content-trust
-      # Sign container
+      # Sign container      
+      - uses: sigstore/cosign-installer@main
+      - name: Write signing key to disk (only needed for `cosign sign --key`)
+        run: echo "${{ secrets.SIGNING_SECRET }}" > cosign.key            
       - name: Sign container image
         run: |
           cosign sign --key cosign.key \
@@ -60,4 +61,3 @@ jobs:
       - name: Echo outputs
         run: |
           echo "${{ toJSON(steps.push.outputs) }}"
-
