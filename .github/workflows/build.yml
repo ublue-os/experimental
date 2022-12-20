@@ -51,7 +51,7 @@ jobs:
       - uses: sigstore/cosign-installer@main
       - name: Sign container image
         run: |
-          cosign sign ${REPO}@${{ steps.push-step.outputs.digest }}
+          cosign sign ${REPO}@${{ steps.push.outputs.digest }}
 
       - name: Echo outputs
         run: |
