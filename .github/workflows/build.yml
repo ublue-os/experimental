@@ -47,14 +47,10 @@ jobs:
             --disable-content-trust
       # Sign container      
       - uses: sigstore/cosign-installer@main
-      - name: Write signing key to disk (only needed for `cosign sign --key`)
-        run: echo "${{ secrets.SIGNING_SECRET }}" > cosign.key            
       - name: Sign container image
         run: |
-          cosign sign --key cosign.key \
+          cosign sign \
           ${{ env.REGISTRY }}/${{ github.actor }}/${{ env.IMAGE_NAME }}:${{ github.run_id }}
-        env:
-          COSIGN_PASSWORD: ""
 
       - name: Echo outputs
         run: |
