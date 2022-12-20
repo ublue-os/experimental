@@ -33,8 +33,6 @@ jobs:
           tags: ${{ env.IMAGE_TAGS }}
           oci: true
        
-
-
       # Push the image to GHCR (Image Registry)
       - name: Push To GHCR
         uses: redhat-actions/push-to-registry@v2
@@ -54,7 +52,7 @@ jobs:
       - name: Sign container image
         run: |
           cosign sign --key cosign.key \
-            ghcr.io/ublue-os/experimental:sha256-${{ github.sha }}
+          ${{ env.REGISTRY }}/${{ github.actor }}/${{ env.IMAGE_NAME }}:${{ github.run_id }}
         env:
           COSIGN_PASSWORD: ""
 
