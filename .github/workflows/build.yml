@@ -50,7 +50,7 @@ jobs:
       - name: Sign container image
         run: |
           cosign sign \
-          ${{ env.REGISTRY }}/${{ github.actor }}/${{ env.IMAGE_NAME }}:${{ github.run_id }}
+          ${REPO}@${{ steps.push-step.outputs.digest }}
 
       - name: Echo outputs
         run: |
