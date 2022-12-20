@@ -12,6 +12,8 @@ jobs:
   push-ghcr:
     name: Build and push image
     runs-on: ubuntu-22.04
+    permissions:
+      id-token: write
     strategy:
       fail-fast: false
     steps:
@@ -49,8 +51,7 @@ jobs:
       - uses: sigstore/cosign-installer@main
       - name: Sign container image
         run: |
-          cosign sign \
-          ${REPO}@${{ steps.push-step.outputs.digest }}
+          cosign sign ${REPO}@${{ steps.push-step.outputs.digest }}
 
       - name: Echo outputs
         run: |
