@@ -15,9 +15,8 @@ jobs:
     permissions:
       contents: read
       packages: write
-      id-token: write
-    strategy:
-      fail-fast: false
+    # strategy:
+    #   fail-fast: false
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -53,8 +52,10 @@ jobs:
       - uses: sigstore/cosign-installer@main
       - name: Sign container image
         run: |
-          cosign sign ${REPO}@${{ steps.push.outputs.digest }}
-
+          cosign sign --key env://COSIGN_PRIVATE_KEY ${TAGS}
+        env:
+          TAGS: ${{ steps.build_image.outputs.tags }}
+          COSIGN_PRIVATE_KEY: ${{secrets.SIGNING_SECRET}}
       - name: Echo outputs
         run: |
           echo "${{ toJSON(steps.push.outputs) }}"
