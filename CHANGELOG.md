@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://github.com/ublue-os/experimental/compare/v1.0.0...v1.1.0) (2023-02-03)
+
+
+### Features
+
+* Add second test file ([79d9f56](https://github.com/ublue-os/experimental/commit/79d9f562a612e7dc6e3221a5374aee7e21b5493c))
+* lint commit messages ([ef75156](https://github.com/ublue-os/experimental/commit/ef751564cb37fd33b4621242d66e2b71a18f0874))
+
+
+### Bug Fixes
+
+* remove old test file ([9f1bcd8](https://github.com/ublue-os/experimental/commit/9f1bcd8f120b9cb0d9963fc0785255af89b38366))
+
 ## 1.0.0 (2023-02-03)
 
 
