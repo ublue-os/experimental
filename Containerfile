@@ -17,4 +17,5 @@ RUN rpm-ostree override remove firefox firefox-langpacks && \
 # VanillaOS first-setup
 COPY --from=ghcr.io/adamisrael/vanilla-first-setup:latest /first-setup/vanilla-first-setup.tar.gz /tmp/vanilla-first-setup.tar.gz
 RUN tar xf /tmp/vanilla-first-setup.tar.gz --strip-component=1 -C / && \
-    chmod +x /usr/bin/vanilla-first-setup
+    chmod +x /usr/bin/vanilla-first-setup && \
+    ostree container commit
