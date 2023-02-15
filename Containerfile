@@ -18,7 +18,6 @@ RUN wget https://copr.fedorainfracloud.org/coprs/ublue-os/vanilla-first-setup/re
     
 # Cleanup
 RUN sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_ublue-os-vanilla-first-setup.repo && \
-    rpm-ostree cleanup -m && \
     rm -rf \
         /tmp/* \
         /var/* && \
