@@ -1,4 +1,6 @@
-FROM quay.io/fedora-ostree-desktops/silverblue:latest
+ARG FEDORA_MAJOR_VERSION=37
+
+FROM quay.io/fedora-ostree-desktops/silverblue:${FEDORA_MAJOR_VERSION}
 
 LABEL org.opencontainers.image.created=2022-06-27T00:00:00Z
 LABEL org.opencontainers.image.description="The description goes in here."
