@@ -1,10 +1,10 @@
 FROM ghcr.io/cgwalters/fedora-silverblue:37
 # See https://pagure.io/releng/issue/11047 for final location
 
-LABEL org.opencontainers.image.created='2022-06-27T00:00:00Z' \
-      org.opencontainers.image.description="The description goes in here." \
-      io.artifacthub.package.readme-url="https://github.com/ublue-os/base/blob/main/README.md" \
-      io.artifacthub.package.logo-url='https://avatars.githubusercontent.com/u/120078124?s=200&v=4'
+LABEL org.opencontainers.image.created=2022-06-27T00:00:00Z
+LABEL org.opencontainers.image.description="The description goes in here."
+LABEL io.artifacthub.package.readme-url=https://github.com/ublue-os/base/blob/main/README.md
+LABEL io.artifacthub.package.logo-url="https://avatars.githubusercontent.com/u/120078124?s=200&v=4"
 
 COPY etc /etc
 
