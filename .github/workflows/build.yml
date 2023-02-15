@@ -26,6 +26,17 @@ jobs:
       - name: Checkout Push to Registry action
         uses: actions/checkout@v2
 
+      # Build metadata
+      - name: Image Metadata
+        uses: docker/metadata-action@v4
+        id: meta
+        with:
+          images: |
+            ${{ env.IMAGE_NAME }}
+          labels: |
+            io.artifacthub.package.readme-url=https://raw.githubusercontent.com/ublue-os/base/main/README.md
+            io.artifacthub.package.logo-url="https://avatars.githubusercontent.com/u/120078124?s=200&v=4"
+
       # Build image using Buildah action
       - name: Build Image
         id: build_image
@@ -35,6 +46,7 @@ jobs:
             ./Containerfile
           image: ${{ env.IMAGE_NAME }}
           tags: ${{ env.IMAGE_TAGS }}
+          labels: ${{ steps.meta.outputs.labels }}
           oci: false
        
       # Workaround bug where capital letters in your GitHub username make it impossible to push to GHCR.

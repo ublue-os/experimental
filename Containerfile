@@ -2,11 +2,6 @@ ARG FEDORA_MAJOR_VERSION=37
 
 FROM quay.io/fedora-ostree-desktops/silverblue:${FEDORA_MAJOR_VERSION}
 
-LABEL org.opencontainers.image.created="$(date --rfc-3339=seconds --utc)"
-LABEL org.opencontainers.image.description="The description goes in here."
-LABEL io.artifacthub.package.readme-url=https://raw.githubusercontent.com/ublue-os/base/main/README.md
-LABEL io.artifacthub.package.logo-url="https://avatars.githubusercontent.com/u/120078124?s=200&v=4"
-
 COPY etc /etc
 
 RUN wget https://copr.fedorainfracloud.org/coprs/ublue-os/vanilla-first-setup/repo/fedora-$(rpm -E %fedora)/ublue-os-vanilla-first-setup-fedora-$(rpm -E %fedora).repo -O /etc/yum.repos.d/_copr_ublue-os-vanilla-first-setup.repo && \
