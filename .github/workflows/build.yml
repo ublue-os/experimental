@@ -26,6 +26,11 @@ jobs:
       - name: Checkout Push to Registry action
         uses: actions/checkout@v2
 
+      - name: Test
+        run: |
+          echo "hello.  this is a test."
+          echo "this should not run"
+
       # Build metadata
       - name: Image Metadata
         uses: docker/metadata-action@v4
