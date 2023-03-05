@@ -13,7 +13,11 @@ jobs:
   release-iso:
     runs-on: ubuntu-latest
     container: fedora:latest
+    strategy:
+      matrix:
+        major-version: [37]
     steps:
+      # The .git directory is not included in checkout for some unknown reason, so a workaround is needed
       - name: Checkout
         uses: actions/checkout@v3
         with:
@@ -22,10 +26,9 @@ jobs:
       - name: Build and release ISO
         uses: p5/ublue-isogenerator@reusable-workflow
         with:
-          image-name: ublue-os_experimental-37
+          image-name: ublue-os_experimental-${{ matrix.major-version }}
           git-tag: v1.1.0
-          installer-major-version: 37
-          installer-version: 37-1.7
+          installer-major-version: ${{ matrix.major-version }}
           kickstart-file-path: ./ublue.ks
           github-token: ${{ secrets.GITHUB_TOKEN }}
           release-artifact: true
