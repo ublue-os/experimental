@@ -6,6 +6,9 @@ on:
   # TODO: Remove pull_request trigger once this workflow is ready for production
   pull_request:
 
+permissions:
+  contents: write
+
 jobs:
   release-iso:
     runs-on: ubuntu-latest
@@ -24,3 +27,4 @@ jobs:
           installer-major-version: 37
           installer-version: 37-1.7
           kickstart-file-path: ./ublue.ks
+          github-token: ${{ secrets.GITHUB_TOKEN }}
