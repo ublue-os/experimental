@@ -28,3 +28,5 @@ jobs:
           installer-version: 37-1.7
           kickstart-file-path: ./ublue.ks
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          release-artifact: true
+          upload-artifact: true
