@@ -1,0 +1,26 @@
+name: Release ISO
+
+on:
+  release:
+    types: [published]
+  # TODO: Remove pull_request trigger once this workflow is ready for production
+  pull_request:
+
+jobs:
+  release-iso:
+    runs-on: ubuntu-latest
+    container: fedora:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.release.tag_name }}
+
+      - name: Build and release ISO
+        uses: p5/ublue-isogenerator@reusable-workflow
+        with:
+          image-name: ublue-os_experimental-37
+          git-tag: ${{ github.event.release.tag_name }}
+          installer-major-version: 37
+          installer-version: 37-1.7
+          kickstart-file-path: ./ublue.ks
