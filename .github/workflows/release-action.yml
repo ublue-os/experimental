@@ -23,7 +23,7 @@ jobs:
         uses: p5/ublue-isogenerator@reusable-workflow
         with:
           image-name: ublue-os_experimental-37
-          git-tag: ${{ github.event.release.tag_name }}
+          git-tag: v1.1.0
           installer-major-version: 37
           installer-version: 37-1.7
           kickstart-file-path: ./ublue.ks
