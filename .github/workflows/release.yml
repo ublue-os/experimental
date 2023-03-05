@@ -13,3 +13,4 @@ jobs:
       image-name: ublue-os_experimental
       git-tag: v1.1.0
       fedora-version: 37
+      kickstart-file-path: ./ublue.ks
