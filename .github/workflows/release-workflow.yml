@@ -1,8 +1,8 @@
 name: Release ISO
 
 on:
-  release:
-    types: [published]
+  #release:
+  #  types: [published]
   # TODO: Remove pull_request trigger once this workflow is ready for production
   pull_request:
 
