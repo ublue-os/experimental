@@ -1,35 +1,24 @@
-name: Release ISO
+name: Generate ISO
 
 on:
-  #release:
-  #  types: [published]
-  # TODO: Remove pull_request trigger once this workflow is ready for production
   pull_request:
 
-permissions:
-  contents: write
-
 jobs:
-  release-iso:
+  build-iso:
     runs-on: ubuntu-latest
     container: fedora:latest
     strategy:
       matrix:
-        major-version: [37]
+        fedora-version: [ 37 ]
     steps:
-      # The .git directory is not included in checkout for some unknown reason, so a workaround is needed
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+      - uses: ublue-os/isogenerator@main
+        id: isogenerator
         with:
-          ref: ${{ github.event.release.tag_name }}
-
-      - name: Build and release ISO
-        uses: p5/ublue-isogenerator@reusable-workflow
+          image-name: example-${{ matrix.fedora-version }}
+          installer-major-version: ${{ matrix.fedora-version }}
+          kickstart-file-path: ublue.ks
+      - uses: actions/upload-artifact@v3
         with:
-          image-name: ublue-os_experimental-${{ matrix.major-version }}
-          git-tag: v1.1.0
-          installer-major-version: ${{ matrix.major-version }}
-          kickstart-file-path: ./ublue.ks
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          release-artifact: true
-          upload-artifact: true
+          name: example-${{ matrix.fedora-version }}
+          path: ${{ steps.isogenerator.outputs.iso-path }}
