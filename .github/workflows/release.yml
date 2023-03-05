@@ -1,0 +1,15 @@
+name: Release ISO
+
+on:
+  release:
+    types: [published]
+  # TODO: Remove pull_request trigger once this workflow is ready for production
+  pull_request:
+
+jobs:
+  release-iso:
+    uses: p5/ublue-isogenerator/.github/workflows/build.yml@reusable-workflow
+    with:
+      image-name: ublue-os_experimental
+      git-tag: v1.1.0
+      fedora-version: 37
