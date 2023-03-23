@@ -1,5 +1,4 @@
-ostreecontainer --url="ghcr.io/ublue-os/silverblue-main:38"
-url --url="https://download.fedoraproject.org/pub/fedora/linux/development/38/Everything/x86_64/os/"
+ostreecontainer --stateroot="fedora-coreos" --remote="fedora" --no-signature-verification --transport="repository" --url="ghcr.io/ublue-os/silverblue-main:38"
 
 %post --logfile=/root/ks-post.log --erroronfail
 %end
