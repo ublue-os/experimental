@@ -15,11 +15,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: ublue-os/isogenerator@v1
+      - uses: ublue-os/isogenerator@update-installer-url
         id: isogenerator
         with:
           image-name: example-${{ matrix.fedora-version }}
-          installer-major-version: development
+          installer-major-version: 38
+          installer-repo: development
           kickstart-file-path: ublue.ks
 
       - uses: actions/upload-artifact@v3
