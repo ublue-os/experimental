@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: ublue-os/isogenerator@update-installer-url
+      - uses: ublue-os/isogenerator@main
         id: isogenerator
         with:
           image-name: example-${{ matrix.fedora-version }}
