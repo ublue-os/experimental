@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: ublue-os/isogenerator@main
+      - uses: ublue-os/isogenerator@cache-everything-iso
         id: isogenerator
         with:
           image-name: bluefin-38
