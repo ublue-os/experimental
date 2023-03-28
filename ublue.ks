@@ -1,4 +1,3 @@
-ostreecontainer --stateroot="fedora-coreos" --remote="fedora" --no-signature-verification --transport="registry" --url="ghcr.io/ublue-os/silverblue-main:38"
-
-%post --logfile=/root/ks-post.log --erroronfail
-%end
+autopart
+ostreecontainer --url="ghcr.io/ublue-os/silverblue-main:38" --no-signature-verification
+url --url="https://download.fedoraproject.org/pub/fedora/linux/development/38/Everything/x86_64/os/" 
