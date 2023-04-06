@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.3](https://github.com/ublue-os/experimental/compare/v1.2.2...v1.2.3) (2023-04-06)
+
+
+### Bug Fixes
+
+* updated old action call to work with new one ([#34](https://github.com/ublue-os/experimental/issues/34)) ([695d93f](https://github.com/ublue-os/experimental/commit/695d93ff635207c6d8e3b3fc7adcd34d5f2baf04))
+
 ## [1.2.2](https://github.com/ublue-os/experimental/compare/v1.2.1...v1.2.2) (2023-04-06)
 
 
