@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/ublue-os/experimental/compare/v1.2.0...v1.2.1) (2023-04-06)
+
+
+### Bug Fixes
+
+* fixed release-please and cosign in build ([#29](https://github.com/ublue-os/experimental/issues/29)) ([780f76c](https://github.com/ublue-os/experimental/commit/780f76c2e9dc0cda95fec57b9f69c98c4d1aba92))
+
 ## [1.2.0](https://github.com/ublue-os/experimental/compare/v1.1.0...v1.2.0) (2023-03-02)
 
 
