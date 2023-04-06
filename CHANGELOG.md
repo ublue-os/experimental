@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/ublue-os/experimental/compare/v1.2.1...v1.2.2) (2023-04-06)
+
+
+### Bug Fixes
+
+* removed matrix  ([#32](https://github.com/ublue-os/experimental/issues/32)) ([b8b1af1](https://github.com/ublue-os/experimental/commit/b8b1af195c1bf4c38f684451780027274ebd8994))
+
 ## [1.2.1](https://github.com/ublue-os/experimental/compare/v1.2.0...v1.2.1) (2023-04-06)
 
 
