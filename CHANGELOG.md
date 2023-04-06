@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/ublue-os/experimental/compare/v1.2.5...v1.3.0) (2023-04-06)
+
+
+### Features
+
+* delete file ([#31](https://github.com/ublue-os/experimental/issues/31)) ([43d4ffe](https://github.com/ublue-os/experimental/commit/43d4ffe5d26efef7c16f1e4b364e394a7ae4b54a))
+
 ## [1.2.5](https://github.com/ublue-os/experimental/compare/v1.2.4...v1.2.5) (2023-04-06)
 
 
