@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.5](https://github.com/ublue-os/experimental/compare/v1.2.4...v1.2.5) (2023-04-06)
+
+
+### Bug Fixes
+
+* Update release-please.yml ([#38](https://github.com/ublue-os/experimental/issues/38)) ([9339c3b](https://github.com/ublue-os/experimental/commit/9339c3be1eb1509cdafbea8863acc2aad426ab95))
+
 ## [1.2.4](https://github.com/ublue-os/experimental/compare/v1.2.3...v1.2.4) (2023-04-06)
 
 
