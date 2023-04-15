@@ -6,15 +6,13 @@ jobs:
   build-iso:
     name: Generate and Release ISOs
     runs-on: ubuntu-latest
-    needs: release-please
-    if: needs.release-please.outputs.releases_created
     container: 
       image: fedora:38
       options: --privileged
     steps:
       - uses: actions/checkout@v3
       - name: Generate ISO  
-        uses: ublue-os/isogenerator@main
+        uses: ublue-os/isogenerator@filename-update
         id: isogenerator
         with:
           image-name: universalblue-38
