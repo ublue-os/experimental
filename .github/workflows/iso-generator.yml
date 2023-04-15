@@ -15,7 +15,7 @@ jobs:
         uses: ublue-os/isogenerator@filename-update
         id: isogenerator
         with:
-          image-name: universalblue-38
+          image-name: universalblue
           installer-repo: development
           installer-major-version: 38
       - name: Upload to workflow
