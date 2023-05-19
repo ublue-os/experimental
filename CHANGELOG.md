@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/ublue-os/experimental/compare/v1.3.0...v1.4.0) (2023-05-19)
+
+
+### Features
+
+* add test5 for great justice ([04e11db](https://github.com/ublue-os/experimental/commit/04e11dbc0a41632f0ffdbb7f886c328a34219e4b))
+
 ## [1.3.0](https://github.com/ublue-os/experimental/compare/v1.2.5...v1.3.0) (2023-04-06)
 
 
