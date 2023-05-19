@@ -6,7 +6,7 @@ on:
     - cron: '0 7 * * *'  # 7 am everyday
   workflow_dispatch:
 env:
-    IMAGE_BASE_NAME: main
+    IMAGE_BASE_NAME: experimental
     IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
 
 jobs:
@@ -23,17 +23,9 @@ jobs:
         image_name: [silverblue]
         major_version: [38]
         include:
-          - major_version: 37
-            is_latest_version: false
-            is_stable_version: true
           - major_version: 38
             is_latest_version: true
             is_stable_version: true
-        exclude:
-          # There is no Fedora 37 version of sericea
-          # When F38 is added, sericea will automatically be built too
-          - image_name: sericea
-            major_version: 37
     steps: 
       # Checkout push-to-registry action GitHub repository
       - name: Checkout Push to Registry action
@@ -176,4 +168,3 @@ jobs:
         if: github.event_name != 'pull_request'
         run: |
           echo "${{ toJSON(steps.push.outputs) }}"
-
